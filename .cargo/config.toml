@@ -12,10 +12,12 @@
     f = "flamegraph --bench"
 
 [future-incompat-report]
+    # Report future incompatibilities in dependencies
     frequency = 'always'
 
 [env]
+    # Enable full backtrace for debugging
     RUST_BACKTRACE = "full"
 
 [build]
-    rustdocflags = ["--default-theme", "trash", "--theme", "doc/trash.css"]
+    rustdocflags = ["--default-theme", "trash", "--theme", ".cargo/theme.css"]
