@@ -14,7 +14,7 @@
 !.gitignore
 !.github/
 !.github/workflows/
-!.github/workflows/*
+!.github/FUNDING.yml
 !.cargo/
 !.cargo/**
 !rust-toolchain.toml
