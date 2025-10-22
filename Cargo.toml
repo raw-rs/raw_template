@@ -1,0 +1,53 @@
+[package]
+    name = "trash_"
+    version = "0.1.1"
+    edition = "2024"
+    resolver = "3"
+    rust-version = "1.92"
+    description = "A raw rust library."
+    authors = ["Azzybana Raccoon <121582001+Azzybana@users.noreply.github.com>"]
+    license = "Apache-2.0"
+    readme = "README.md"
+    repository = "https://github.com/raw-rs/raw_"
+    documentation = "https://docs.rs/raw_"
+
+[dependencies]
+    # As a design decision, the libraries in the raw ecosystem may only depend on other raw libraries
+
+[features]
+    default = []
+
+[lib]
+    name = "raw_"
+    path = "src/lib.rs"
+    crate-type = ["rlib"]
+
+[[test]]
+    name = "test_raw_"
+    path = "tests/test.rs"
+
+[lints.clippy]
+    correctness = "warn"
+    suspicious = "warn"
+    style = "warn"
+    complexity = "warn"
+    perf = "warn"
+    pedantic = "warn"
+
+[profile.debug]
+    opt-level = 1
+
+[profile.release]
+    opt-level = 3
+    strip = "symbols"
+    lto = "fat"
+    panic = 'abort'
+    codegen-units = 1
+
+[profile.bench]
+    debug = true
+    opt-level = 3
+    strip = "symbols"
+    lto = "fat"
+    panic = 'abort'
+    codegen-units = 1

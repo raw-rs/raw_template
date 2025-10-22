@@ -1,0 +1,65 @@
+name: Rust Checks
+
+on:
+  push:
+    branches: [ dev, staging ]
+  pull_request:
+    branches: [ dev, staging ]
+  workflow_dispatch:
+    inputs:
+      container-image:
+        description: 'Container image to pull from DockerHub'
+        required: false
+
+jobs:
+  lint-and-format:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        rust: [stable, nightly]
+    env:
+      CARGO_TERM_COLOR: always
+      CARGO_INCREMENTAL: 0
+      CARGO_NET_RETRY: 10
+      CI: 1
+      RUST_BACKTRACE: short
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Cache cargo registry and build
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-cargo-
+
+    - name: Install Rust toolchain (stable/nightly)
+      uses: dtolnay/rust-toolchain@v1
+      with:
+        toolchain: ${{ matrix.rust }}
+        components: rustfmt, clippy
+
+    - name: Show toolchain
+      run: |
+        rustup --version
+        rustc -vV
+        cargo --version
+
+    - name: Run cargo fmt
+      run: cargo fmt --all
+
+    - name: Check formatting (fail if changes were made)
+      run: |
+        if ! git diff --quiet; then
+          echo "Code was not formatted. Please run 'cargo fmt' locally."
+          exit 1
+        fi
+
+    - name: Run cargo clippy and fail on warnings
+      run: cargo clippy --all-targets --all-features -- -D warnings

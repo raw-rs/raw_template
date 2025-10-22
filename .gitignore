@@ -1,0 +1,20 @@
+# Ignore everything by default
+*
+
+# But keep Rust essentials
+!Cargo.toml
+!src/
+!src/** 
+!doc/
+!doc/**
+!tests/
+!tests/**
+!README.md
+!LICENSE.md
+!.gitignore
+!.github/
+!.github/workflows/
+!.github/workflows/*
+!.cargo/
+!.cargo/**
+!rust-toolchain.toml

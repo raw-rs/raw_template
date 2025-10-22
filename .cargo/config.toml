@@ -1,0 +1,21 @@
+[alias]
+    # Consolidated descriptive aliases
+    test = "nextest run --config-file .cargo/nextest.toml"
+    coverage = "llvm-cov nextest --config-file .cargo/nextest.toml --html"
+    lcov = "llvm-cov nextest --config-file .cargo/nextest.toml --lcov --output-path lcov.info"
+    flamegraph = "flamegraph --bench"
+
+    # Short synonyms for convenience (kept for muscle memory)
+    t = "nextest run --config-file .cargo/nextest.toml"
+    c = "llvm-cov nextest --config-file .cargo/nextest.toml --html"
+    l = "llvm-cov nextest --config-file .cargo/nextest.toml --lcov --output-path lcov.info"
+    f = "flamegraph --bench"
+
+[future-incompat-report]
+    frequency = 'always'
+
+[env]
+    RUST_BACKTRACE = "full"
+
+[build]
+    rustdocflags = ["--default-theme", "trash", "--theme", "doc/trash.css"]
