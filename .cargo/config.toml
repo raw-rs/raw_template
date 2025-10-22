@@ -20,4 +20,4 @@
     RUST_BACKTRACE = "full"
 
 [build]
-    rustdocflags = ["--default-theme", "trash", "--theme", ".cargo/theme.css"]
+    rustdocflags = ["--default-theme", "raw", "--theme", ".cargo/raw.css"]

@@ -10,7 +10,6 @@
 //! println!("{}", greeting);
 //! ```
 #![doc(html_logo_url = "https://avatars.githubusercontent.com/u/239414506?s=400&&v=4")]
-#![cfg_attr(not(feature = "std"), no_std)]
 
 /// Returns a static greeting string.
 ///

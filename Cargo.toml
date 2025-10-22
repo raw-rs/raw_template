@@ -1,5 +1,5 @@
 [package]
-    name = "trash_"
+    name = "raw_"
     version = "0.1.1"
     edition = "2024"
     resolver = "3"
@@ -34,7 +34,7 @@
     perf = "warn"
     pedantic = "warn"
 
-[profile.debug]
+[profile.dev]
     opt-level = 1
 
 [profile.release]
@@ -51,3 +51,8 @@
     lto = "fat"
     panic = 'abort'
     codegen-units = 1
+
+[package.metadata.docs.rs]
+    all-features = true
+    rustc-args = ["--cfg", "docsrs"]
+    rustdoc-args = ["--default-theme", "raw", "--theme", ".cargo/raw.css"]

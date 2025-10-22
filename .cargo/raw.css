@@ -1,0 +1,243 @@
+/* Begin theme: theme */
+
+@font-face {
+    font-family: 'opendyslexic';
+    font-style: normal;
+    font-weight: normal;
+    src: url('https://forge.hackers.town/antijingoist/opendyslexic/raw/branch/main/compiled/OpenDyslexic-Regular.woff');
+}
+
+@font-face {
+    font-family: 'opendyslexic';
+    font-style: italic;
+    font-weight: normal;
+    src: url('https://forge.hackers.town/antijingoist/opendyslexic/raw/branch/main/compiled/OpenDyslexic-Italic.woff');
+}
+
+@font-face {
+    font-family: 'opendyslexic';
+    font-weight: bold;
+    font-style: normal;
+    src: url('https://forge.hackers.town/antijingoist/opendyslexic/raw/branch/main/compiled/OpenDyslexic-Bold.woff');
+}
+
+@font-face {
+    font-family: 'opendyslexic';
+    font-weight: bold;
+    font-style: italic;
+    src: url('https://forge.hackers.town/antijingoist/opendyslexic/raw/branch/main/compiled/OpenDyslexic-BoldItalic.otf');
+}
+
+
+/* Page Configuration */
+:root[data-theme="raw"] {
+    font-family: opendyslexic !important;
+    --stab-background-color: #2d2d2d;
+    --main-background-color: #040404;
+    ;
+    --main-color: #dfe6e9;
+    --settings-input-color: #74b9ff;
+    --settings-input-border-color: #b2bec3;
+    --settings-button-color: #dfe6e9;
+    --settings-button-border-focus: #dfe6e9;
+    --sidebar-background-color: #2d2d2d;
+    --sidebar-background-color-hover: rgba(74, 74, 74, 0.5);
+    --sidebar-border-color: #b2bec3;
+    --code-block-background-color: #2d2d2d;
+    --scrollbar-track-background-color: transparent;
+    --scrollbar-thumb-background-color: #b2bec3;
+    --scrollbar-color: #b2bec3 #2d2d2d;
+    --headings-border-bottom-color: #b2bec3;
+    --border-color: #b2bec3;
+    --button-background-color: #2d2d2d;
+    --right-side-color: #b2bec3;
+    --code-attribute-color: #b2bec3;
+    --toggles-color: #b2bec3;
+    --toggle-filter: invert(100%);
+    --mobile-sidebar-menu-filter: invert(100%);
+    --search-input-focused-border-color: #0984e3;
+    --copy-path-button-color: #dfe6e9;
+    --copy-path-img-filter: invert(70%);
+    --copy-path-img-hover-filter: invert(100%);
+    --code-example-button-color: #b2bec3;
+    --code-example-button-hover-color: #dfe6e9;
+    --codeblock-error-hover-color: rgb(225, 112, 85);
+    --codeblock-error-color: rgba(225, 112, 85, 0.5);
+    --codeblock-ignore-hover-color: rgb(250, 177, 160);
+    --codeblock-ignore-color: rgba(250, 177, 160, 0.6);
+    --warning-border-color: #e17055;
+    --type-link-color: #0984e3;
+    --trait-link-color: #74b9ff;
+    --assoc-item-link-color: #74b9ff;
+    --function-link-color: 90bcff;
+    --macro-link-color: #e17055;
+    --keyword-link-color: #d4cbff;
+    --attribute-link-color: #d4cbff;
+    --mod-link-color: #d4cbff;
+    --link-color: #74b9ff;
+    --sidebar-link-color: 90bcff;
+    --sidebar-current-link-background-color: transparent;
+    --search-result-link-focus-background-color: #2d2d2d;
+    --search-result-border-color: #b2bec3;
+    --search-color: #dfe6e9;
+    --search-error-code-background-color: #2d2d2d;
+    --search-results-alias-color: #b2bec3;
+    --search-results-grey-color: #2d2d2d;
+    --search-tab-title-count-color: #b2bec3;
+    --search-tab-button-not-selected-border-top-color: none;
+    --search-tab-button-not-selected-background: transparent !important;
+    --search-tab-button-selected-border-top-color: none;
+    --search-tab-button-selected-background: #2d2d2d !important;
+    --settings-menu-filter: invert(70%);
+    --settings-menu-hover-filter: invert(100%);
+    --stab-code-color: #0984e3;
+    --code-highlight-kw-color: #d4cbff;
+    --code-highlight-kw-2-color: #d4cbff;
+    --code-highlight-lifetime-color: #0984e3;
+    --code-highlight-prelude-color: 90bcff;
+    --code-highlight-prelude-val-color: #e17055;
+    --code-highlight-number-color: #e17055;
+    --code-highlight-string-color: #fab1a0;
+    --code-highlight-literal-color: #e17055;
+    --code-highlight-attribute-color: #d4cbff;
+    --code-highlight-self-color: #0984e3;
+    --code-highlight-macro-color: #0984e3;
+    --code-highlight-question-mark-color: #0984e3;
+    --code-highlight-comment-color: #b2bec3;
+    --code-highlight-doc-comment-color: #dfe6e9;
+    --src-line-numbers-span-color: #b2bec3;
+    --src-line-number-highlighted-background-color: rgba(223, 230, 233, 0.04);
+    --target-background-color: rgba(223, 230, 233, 0.04);
+    --target-border-color: #0984e3;
+    --kbd-color: #dfe6e9;
+    --kbd-background: #2d2d2d;
+    --kbd-box-shadow-color: #2d2d2d;
+    --rust-logo-filter: drop-shadow(1px 0 0px #dfe6e9) drop-shadow(0 1px 0 #dfe6e9) drop-shadow(-1px 0 0 #dfe6e9) drop-shadow(0 -1px 0 #dfe6e9);
+    /* match border-color; uses https://codepen.io/sosuke/pen/Pjoqqp */
+    --crate-search-div-filter: invert(41%) sepia(12%) saturate(487%) hue-rotate(171deg) brightness(94%) contrast(94%);
+    --crate-search-div-hover-filter: invert(98%) sepia(12%) saturate(81%) hue-rotate(343deg) brightness(113%) contrast(76%);
+    --crate-search-hover-border: #b2bec3;
+    --src-sidebar-background-selected: #2d2d2d;
+    --src-sidebar-background-hover: #2d2d2d;
+    --table-alt-row-background-color: #2d2d2d;
+    --codeblock-link-background: #2d2d2d;
+    --scrape-example-toggle-line-background: #b2bec3;
+    --scrape-example-toggle-line-hover-background: #dfe6e9;
+    --scrape-example-code-line-highlight: #040404;
+    ;
+    --scrape-example-code-line-highlight-focus: #2d2d2d;
+    --scrape-example-help-border-color: #b2bec3;
+    --scrape-example-help-color: #dfe6e9;
+    --scrape-example-help-hover-border-color: #dfe6e9;
+    --scrape-example-help-hover-color: #dfe6e9;
+    --scrape-example-code-wrapper-background-start: rgba(42, 42, 42, 1);
+    --scrape-example-code-wrapper-background-end: rgba(42, 42, 42, 0);
+    --sidebar-resizer-hover: #2d2d2d;
+    --sidebar-resizer-active: #040404;
+    ;
+}
+
+/* Element Display */
+:root[data-theme="raw"] h1,
+:root[data-theme="raw"] h2,
+:root[data-theme="raw"] h3,
+:root[data-theme="raw"] h4,
+:where(:root[data-theme="raw"]) h1 a,
+:root[data-theme="raw"] .sidebar h2 a,
+:root[data-theme="raw"] .sidebar h3 a {
+    color: #dfe6e9;
+}
+
+:root[data-theme="raw"] .docblock {
+    color: #d0ffd8;
+}
+
+:root[data-theme="raw"] .docblock code {
+    color: #fab1a0;
+}
+
+:root[data-theme="raw"] .docblock a>code {
+    color: #fab1a0 !important;
+}
+
+:root[data-theme="raw"] .sidebar-elems .location {
+    color: 90bcff;
+}
+
+:root[data-theme="raw"] .sidebar a {
+    color: #d26d6d;
+}
+
+:root[data-theme="raw"] .sidebar .current,
+:root[data-theme="raw"] .sidebar .current a,
+:root[data-theme="raw"] #src-sidebar div.files>a:focus,
+:root[data-theme="raw"] details.dir-entry summary:focus,
+:root[data-theme="raw"] #src-sidebar div.files>a.selected,
+:root[data-theme="raw"] .sidebar a:hover,
+:root[data-theme="raw"] #src-sidebar div.files>a:hover,
+:root[data-theme="raw"] details.dir-entry summary:hover {
+    color: transparent;
+    color: #c1a121;
+}
+
+
+:root[data-theme="raw"] .macro {
+    color: #e17055;
+}
+
+:root[data-theme="raw"] a[data-nosnippet].line-highlighted {
+    color: #b2bec3;
+    padding-right: 7px;
+    border-right: 1px solid #0984e3;
+}
+
+/* Search and Results */
+:root[data-theme="raw"] .search-results a:hover,
+:root[data-theme="raw"] .search-results a:focus {
+    color: #dfe6e9 !important;
+    background-color: #636e72;
+}
+
+:root[data-theme="raw"] .search-results a {
+    color: #74b9ff;
+}
+
+:root[data-theme="raw"] .search-results a div.desc {
+    color: #b2bec3;
+}
+
+:root[data-theme="raw"] .result-name .primitive>i,
+:root[data-theme="raw"] .result-name .keyword>i {
+    color: #b2bec3;
+}
+
+:root[data-theme="raw"] #search-tabs>button.selected {
+    border-bottom: 1px solid #0984e3 !important;
+    border-top: none;
+}
+
+:root[data-theme="raw"] #search-tabs>button:not(.selected) {
+    border: none;
+    background-color: transparent !important;
+}
+
+:root[data-theme="raw"] #search-tabs>button:hover {
+    border-bottom: 1px solid rgba(9, 132, 227, 0.3);
+}
+
+/* Code Things */
+:root[data-theme="raw"] .code-header,
+:root[data-theme="raw"] .docblock pre>code,
+:root[data-theme="raw"] pre,
+:root[data-theme="raw"] pre>code,
+:root[data-theme="raw"] .item-info code,
+:root[data-theme="raw"] .rustdoc.source .example-wrap {
+    color: #d4cbff;
+}
+
+:root[data-theme="raw"] .settings-menu>a img,
+:root[data-theme="raw"] #sidebar-button>a::before {
+    filter: invert(100);
+}
+
+/* End theme: raw */
