@@ -1,46 +1,25 @@
-# trash_
+[![CI](https://github.com/your_username/your_repo/actions/workflows/consistency.yml/badge.svg)](https://github.com/your_username/your_repo/actions)
+[![docs.rs](https://docs.rs/your_crate_name/badge.svg)](https://docs.rs/your_crate_name)
+[![Crates.io](https://img.shields.io/crates/v/your_crate_name.svg)](https://crates.io/crates/your_crate_name)
 
-Raw rust based library. 
+# trash
+
+Raw rust based library.
 
 To build with features:
-
 
 ## Cargo aliases
 
 Aliases are defined in `.cargo/config.toml` for common workflows:
 
-| Alias | Short | Description | Expands to |
-|-------|-------|-------------|------------|
-| `test` | `t` | Run tests with `cargo-nextest` | `nextest run --config-file .cargo/nextest.toml` |
-| `coverage` | `c` | HTML coverage report | `llvm-cov nextest --config-file .cargo/nextest.toml --html` |
-| `lcov` | `l` | LCOV coverage file | `llvm-cov nextest --config-file .cargo/nextest.toml --lcov --output-path lcov.info` |
-| `flamegraph` | `f` | Generate flamegraph | `flamegraph --bench` |
+| Alias        | Short | Description                    | Expands to                                                                          |
+| ------------ | ----- | ------------------------------ | ----------------------------------------------------------------------------------- |
+| `test`       | `t`   | Run tests with `cargo-nextest` | `nextest run --config-file .cargo/nextest.toml`                                     |
+| `coverage`   | `c`   | HTML coverage report           | `llvm-cov nextest --config-file .cargo/nextest.toml --html`                         |
+| `lcov`       | `l`   | LCOV coverage file             | `llvm-cov nextest --config-file .cargo/nextest.toml --lcov --output-path lcov.info` |
+| `flamegraph` | `f`   | Generate flamegraph            | `flamegraph --bench`                                                                |
 
 Prerequisites: Install `cargo-nextest`, `cargo-llvm-cov` (with LLVM), and `flamegraph`. Assumes `.cargo/nextest.toml` exists.
-
-
-
-## How to use
-
-1. Clone or fork this repository.
-2. Add your library modules under `src/` (replacing the minimal scaffold).
-3. Build with:
-
-```powershell
-cargo build
-```
-
-4. Run tests:
-
-```powershell
-cargo test
-```
-
-5. Generate documentation with the custom logo:
-
-```powershell
-cargo doc --open
-```
 
 ## CI and Linting
 
@@ -90,4 +69,3 @@ Notes and platform specifics
 
 - `cargo-flamegraph` uses `perf` on Linux and `dtrace` on other platforms; on Windows support may be limited. If you're on Linux and want to run perf without root, you may need to lower `perf_event_paranoid` (see the `cargo-flamegraph` README for details).
 - If your benchmarks are under a particular bench target, `cargo f` will profile the default bench runners. You can also run `cargo flamegraph --bench your_bench_name` directly if you need to target a specific benchmark.
-

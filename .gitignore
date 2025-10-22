@@ -18,3 +18,4 @@
 !.cargo/
 !.cargo/**
 !rust-toolchain.toml
+!.editorconfig
